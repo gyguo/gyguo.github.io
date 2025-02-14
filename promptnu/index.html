@@ -1,0 +1,272 @@
+
+<!DOCTYPE html>
+<html>
+
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+
+    <title>Trajectory Consistency Distillation</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/css/bootstrap.min.css">
+    <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,500,600' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="css/Highlight-Clean.css">
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- <base href="/"> -->
+
+
+    <meta property="og:image:width" content="682">
+    <meta property="og:image:height" content="682">
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://gyguo.github.io/promptnu"/>
+    <meta property="og:title" content="PromptNu" />
+    <meta property="og:description" content="Prompting Vision-Language Model for Nuclei Instance Segmentation and Classification" />
+    <script type="module" src="https://unpkg.com/@google/model-viewer@2.0.1/dist/model-viewer.min.js"></script>
+
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script> 
+
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.8.0/codemirror.min.css">
+    <link rel="stylesheet" href="css/app.css">
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+
+
+</head>
+    <body>
+        <div class="highlight-clean" style="padding-bottom: 10px;">
+            <div class="container">
+                <h1 class="text-center"><b>PromptNu</b></h1>
+
+
+                <h3 class="text-center">Prompting Vision-Language Model for Nuclei Instance Segmentation and Classification</h3>
+              </div>
+            <div class="container" style="max-width: 768px;">
+                <div class="row authors">
+                    <div class="col-sm-3">
+                        <h5 class="text-center"><a class="text-center" href="https://gyguo.github.io/promptnu">Jieru Yao *</a></h5>
+                        <h6 class="text-center">Northwestern Polytechnical University</h6>
+                    </div>
+                    <div class="col-sm-3">
+                        <h5 class="text-center"><a class="text-center" href="https://gyguo.github.io/promptnu">Guangyu Guo * </a></h5>
+                        <h6 class="text-center">Northwestern Polytechnical University</h6>
+                    </div>
+                    <div class="col-sm-3">
+                        <h5 class="text-center"><a class="text-center" href="https://gyguo.github.io/promptnu">Dingwen Zhang</a></h5>
+                        <h6 class="text-center">Northwestern Polytechnical University, Xijing Hospital</h6>
+                    </div>
+                    <div class="col-sm-3">
+                        <h5 class="text-center"><a class="text-center" href="https://gyguo.github.io/promptnu">Qiang Xie</a></h5>
+                        <h6 class="text-center">University of Science and Technology of China</h6>
+                    </div>
+                    <div class="col-sm-4">
+                        <h5 class="text-center"><a class="text-center" href="https://gyguo.github.io/promptnu">Longfei Han</a></h5>
+                        <h6 class="text-center">Beijing Technology and Business University, Hefei Comprehensive National Science Center</h6>
+                    </div>
+                    <div class="col-sm-4">
+                      <h5 class="text-center"><a class="text-center" href="https://gyguo.github.io/promptnu">Zhaohui Zheng</a></h5>
+                      <h6 class="text-center">Xijing Hospital</h6>
+                  </div>
+                    <div class="col-sm-4">
+                        <h5 class="text-center"><a class="text-center" href="https://gyguo.github.io/promptnu">Junwei Han</a></h5>
+                        <h6 class="text-center">Northwestern Polytechnical University, Hefei Comprehensive National Science Center</h6>
+                    </div>
+                </div>    
+                <p class="text-center", style="font-size: 80%;">
+                  * Equal contribution; # Corresponding author
+                  </p>
+            </div>
+
+            <div class="container" style="max-width: 768px;">
+                <!-- PDF Link. -->
+                <div class="col-xs-12 col-sm-5 col-md-5 text-center">
+                <a href="https://gyguo.github.io/promptnu" target="_blank" class="link-block btn btn-outline-dark text-center">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-file-earmark-pdf-fill" viewBox="0 0 16 16">
+                        <path d="M5.523 12.424c.14-.082.293-.162.459-.238a7.878 7.878 0 0 1-.45.606c-.28.337-.498.516-.635.572a.266.266 0 0 1-.035.012.282.282 0 0 1-.026-.044c-.056-.11-.054-.216.04-.36.106-.165.319-.354.647-.548zm2.455-1.647c-.119.025-.237.05-.356.078a21.148 21.148 0 0 0 .5-1.05 12.045 12.045 0 0 0 .51.858c-.217.032-.436.07-.654.114zm2.525.939a3.881 3.881 0 0 1-.435-.41c.228.005.434.022.612.054.317.057.466.147.518.209a.095.095 0 0 1 .026.064.436.436 0 0 1-.06.2.307.307 0 0 1-.094.124.107.107 0 0 1-.069.015c-.09-.003-.258-.066-.498-.256zM8.278 6.97c-.04.244-.108.524-.2.829a4.86 4.86 0 0 1-.089-.346c-.076-.353-.087-.63-.046-.822.038-.177.11-.248.196-.283a.517.517 0 0 1 .145-.04c.013.03.028.092.032.198.005.122-.007.277-.038.465z"/>
+                        <path fill-rule="evenodd" d="M4 0h5.293A1 1 0 0 1 10 .293L13.707 4a1 1 0 0 1 .293.707V14a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V2a2 2 0 0 1 2-2zm5.5 1.5v2a1 1 0 0 0 1 1h2l-3-3zM4.165 13.668c.09.18.23.343.438.419.207.075.412.04.58-.03.318-.13.635-.436.926-.786.333-.401.683-.927 1.021-1.51a11.651 11.651 0 0 1 1.997-.406c.3.383.61.713.91.95.28.22.603.403.934.417a.856.856 0 0 0 .51-.138c.155-.101.27-.247.354-.416.09-.181.145-.37.138-.563a.844.844 0 0 0-.2-.518c-.226-.27-.596-.4-.96-.465a5.76 5.76 0 0 0-1.335-.05 10.954 10.954 0 0 1-.98-1.686c.25-.66.437-1.284.52-1.794.036-.218.055-.426.048-.614a1.238 1.238 0 0 0-.127-.538.7.7 0 0 0-.477-.365c-.202-.043-.41 0-.601.077-.377.15-.576.47-.651.823-.073.34-.04.736.046 1.136.088.406.238.848.43 1.295a19.697 19.697 0 0 1-1.062 2.227 7.662 7.662 0 0 0-1.482.645c-.37.22-.699.48-.897.787-.21.326-.275.714-.08 1.103z"/>
+                      </svg>
+                      Paper
+                </a>
+            </div>
+                <!-- code link. -->
+                <div class="col-xs-12 col-sm-5 col-md-5 text-center">
+                <a href="https://gyguo.github.io/promptnu" target="_blank" class="link-block btn btn-outline-dark text-center">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-github" viewBox="0 0 16 16">
+                        <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z"/>
+                      </svg>
+                    Code 
+                </a>
+            </div>
+
+        </div>
+        <!-- <image src="img/teaser_fig.png" class="img-responsive" alt="overview"><br> -->
+          <div class="gallery">
+            <div class="image-container">
+                <div class="flipper">
+                    <img src="img/visualization/56_gt.png" class="front" alt="Front 0.9.2">
+                    <img src="img/visualization/56_instance_segmentation_ours.png" class="back" alt="Back 0.9">
+                </div>
+            </div>
+            <div class="image-container">
+              <div class="flipper">
+                  <img src="img/visualization/TCGA-44-2665-01B-06-BS6_gt.png" class="front" alt="Front 0.9">
+                  <img src="img/visualization/TCGA-44-2665-01B-06-BS6_instance_segmentation_ours.png" class="back" alt="Back 0.9.1">
+              </div>
+          </div>
+          <div class="image-container">
+            <div class="flipper">
+                <img src="img/visualization/human_liver_06.png" class="front" alt="Front 0.9.2">
+                <img src="img/visualization/human_liver_06_instance_our.png" class="back" alt="Back 0.9">
+            </div>
+        </div>
+        <div class="image-container">
+          <div class="flipper">
+              <img src="img/visualization/human_cerebellum_11.png" class="front" alt="Front 0.9">
+              <img src="img/visualization/human_cerebellum_11_instance_our.png" class="back" alt="Back 0.9.1">
+          </div>
+      </div>
+      <div class="image-container">
+                <div class="flipper">
+                    <img src="img/visualization/TCGA-EJ-A46H-01A-03-TSC_3_0_gt.png" class="front" alt="Front 0.9.2">
+                    <img src="img/visualization/TCGA-EJ-A46H-01A-03-TSC_3_0_instance_segmentation_ours.png" class="back" alt="Back 0.9">
+                </div>
+            </div>
+            <div class="image-container">
+              <div class="flipper">
+                  <img src="img/visualization/TCGA-69-7764-01A-01-TS1_gt.png" class="front" alt="Front 0.9">
+                  <img src="img/visualization/TCGA-69-7764-01A-01-TS1_instance_segmentation_ours.png" class="back" alt="Back 0.9.1">
+              </div>
+          </div>
+          <div class="image-container">
+            <div class="flipper">
+                <img src="img/visualization/human_oesophagus_06.png" class="front" alt="Front 0.9.2">
+                <img src="img/visualization/human_placenta_17_instance_our.png" class="back" alt="Back 0.9">
+            </div>
+        </div>
+        <div class="image-container">
+          <div class="flipper">
+              <img src="img/visualization/human_placenta_17.png" class="front" alt="Front 0.9">
+              <img src="img/visualization/human_cerebellum_11_instance_our.png" class="back" alt="Back 0.9.1">
+          </div>
+      </div>
+            
+        </div>
+
+        <div class="highlight-clean" style="padding-bottom: 10px;">
+
+        
+      <hr class="divider" />
+      <div class="container" style="max-width: 1024px;">
+          <div class="row">
+                <div class="col-md-12">
+                    <h2>Abstract</h2>
+                    <div class="row">
+                        <div class="col-md-12 text-center">
+                            <img src="img/motivation.png" alt="overview" style="width: 70%; height: auto;">
+                            <h4 class="caption text-left">Comparisons between the traditional nuclei instance training paradigm with PromptNu. PromptNu can transfer knowledge from prompts containing abundant nuclear characteristics and pretrained vision-language models (VLMs) to nuclei instance segmentation and classification.
+                    </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <hr class="divider" />
+      <div class="container" style="max-width: 1024px;">
+          <div class="row">
+                <div class="col-md-12">
+                    <h2>Framework</h2>
+                    <div class="row">
+                        <div class="col-md-12 text-center">
+                            <img src="img/framework.png" alt="overview" style="width: 100%; height: auto;">
+                            <h4 class="caption text-left">Firstly, attribute-aware and class-specific text prompts are generated by incorporating multifaceted prior knowledge, drawn from GPT-4V pathology visual analysis, statistical considerations, and pathologists' clinical expertise. Next, PromptNu extracts both image and text embeddings, leveraging global information from attribute-aware text embeddings integrated into image embeddings via PNuRL. To better exploit class-specific knowledge, PNuDP calculates the original image-text matching paradigm into pixel-text matching. The pixel-text score maps are subsequently fed into the decoder and supervised using ground-truth labels.
+                    </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <hr class="divider" />
+      <div class="container" style="max-width: 1024px;">
+          <div class="row">
+                <div class="col-md-12">
+                    <h2>Dataset</h2>
+                    <div class="row">
+                        <div class="col-md-12 text-center">
+                            <img src="img/dataset.png" alt="overview" style="width: 100%; height: auto;">
+                            <h4 class="caption text-left">Our experiments are conducted on five datasets, ie, MoNuSeg, CPM-17, PanNuke and NuInsSeg for the semantic segmentation and instance segmentation tasks, Lizard and CoNSeP for semantic segmentation, instance segmentation and classification tasks. 
+                    </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <hr class="divider" />
+      <div class="container" style="max-width: 1024px;">
+          <div class="row">
+                <div class="col-md-12">
+                    <h2>Visualization</h2>
+                    <div class="row">
+                        <div class="col-md-12 text-center">
+                            <img src="img/visualization.png" alt="overview" style="width: 100%; height: auto;">
+                            <h4 class="caption text-left">Visualization results on MoNuSeg, CPM-17, PanNuke, NuInsSeg, Lizard and CoNSeP datasets. For instance segmentation (top three rows), different colors of nuclear boundaries represent distinct instances, while for classification results (bottom two rows), varying colors indicate different types. Regions of evident improvements are enlarged via yellow boxes to show better details.
+                    </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <hr class="divider" />
+        <div class="container" style="max-width: 1024px;">
+            <div class="row">
+                <div class="col-md-12">
+                    <h2>Citation</h2>
+                    <code>
+                        @article{yao2025promptnu,<br>
+                        &nbsp; title = {Prompting Vision-Language Model for Nuclei Instance Segmentation and Classification},<br>
+                        &nbsp; author = {Jieru Yao and Guangyu Guo and Dingwen Zhang and Qiang Xie and Longfei Han and Zhaohui Zheng and Junwei Han},<br>
+                        &nbsp; year = {2025},<br>
+                    }</code>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <h5>
+                        Acknowledgements
+                    </h5>
+                    <p class="text-justify", style="font-size: 80%;">
+                    The website style was inspired from <a href="https://dreamfusion3d.github.io/">DreamFusion</a>.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+
+
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.8.0/codemirror.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/1.5.3/clipboard.min.js"></script>
+        <script src="js/app.js"></script>
+        <script src="js/mySwiper.js"></script>
+        <script type="text/x-mathjax-config">
+                 MathJax.Hub.Config({
+                   tex2jax: {
+                     skipTags: ['script', 'noscript', 'style', 'textarea', 'pre']
+                   }
+                 });
+             
+                 MathJax.Hub.Queue(function() {
+                     var all = MathJax.Hub.getAllJax(), i;
+                    for(i=0; i < all.length; i += 1) {
+                        all[i].SourceElement().parentNode.className += ' has-jax';
+                    }
+                });
+            </script>      
+            <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"> </script>
+        <!-- Import the component -->
+    </body>
+</html>
