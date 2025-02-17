@@ -5,5 +5,5 @@ The template is provide by [@ajlkn](https://twitter.com/) in the website https:/
 
 ### Website
 - **Homepage**: https://gyguo.github.io/
-- **Project**: https://gyguo.github.io/
+- **Project PromptNu**: https://gyguo.github.io/promptnu
 
