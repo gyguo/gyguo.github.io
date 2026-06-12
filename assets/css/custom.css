@@ -143,6 +143,58 @@ strong, b {
   background-color: #eef1f5;
 }
 
+/* Sidebar profile section */
+.sidebar-profile {
+  padding: 1.5em 0 1em 0;
+}
+
+.sidebar-profile h3 {
+  margin: 0 0 0.2em 0;
+  font-size: 1.3em;
+  color: #2c3e50;
+}
+
+.sidebar-profile .profile-affiliation {
+  margin: 0 0 0.1em 0;
+  font-size: 0.95em;
+  color: #4a5568;
+  font-weight: 600;
+}
+
+.sidebar-profile .profile-role {
+  margin: 0 0 0.8em 0;
+  font-size: 0.88em;
+  color: #718096;
+}
+
+.sidebar-profile .profile-links {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.sidebar-profile .profile-links li {
+  padding: 0.25em 0;
+  font-size: 0.9em;
+  color: #4a5568;
+}
+
+.sidebar-profile .profile-links li i {
+  width: 1.4em;
+  text-align: center;
+  color: #4a76a8;
+  margin-right: 0.4em;
+}
+
+.sidebar-profile .profile-links li a {
+  color: #4a5568;
+  border-bottom: none;
+}
+
+.sidebar-profile .profile-links li a:hover {
+  color: #4a76a8 !important;
+}
+
 #sidebar > .inner > * {
   border-bottom-color: rgba(0, 0, 0, 0.08);
 }
