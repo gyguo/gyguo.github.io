@@ -45,8 +45,17 @@
   display: block;
 }
 
-/* Portrait / narrow screens: photo on top, centered, smaller */
+/* Portrait / narrow screens: photo on top, text below, centered */
 @media screen and (orientation: portrait) {
+  #banner {
+    flex-direction: column;
+    align-items: center;
+  }
+  #banner .content {
+    width: 100%;
+    max-width: 100%;
+    flex-grow: 0;
+  }
   #banner .image {
     width: 180px;
     height: 180px;
@@ -63,19 +72,31 @@
 }
 
 @media screen and (max-width: 736px) {
+  #banner {
+    flex-direction: column;
+    align-items: center;
+    padding: 1.2em 0 0.8em 0;
+  }
+  #banner .content {
+    width: 100%;
+    max-width: 100%;
+  }
   #banner .image {
-    width: 150px;
-    height: 150px;
+    width: 175px;
+    height: 175px;
     margin: 0 auto 1em auto;
     max-height: none;
   }
 }
 
-@media screen and (orientation: portrait) and (max-width: 480px) {
+@media screen and (max-width: 480px) {
   #banner .image {
-    width: 140px;
-    height: 140px;
+    width: 155px;
+    height: 155px;
     max-height: none;
+  }
+  #main > .inner {
+    padding: 0 1.2em 0.1em 1.2em;
   }
 }
 
@@ -166,29 +187,17 @@ strong, b {
 .pub-list {
   list-style: none;
   padding-left: 0;
-  counter-reset: pub-counter;
 }
 
 .pub-list li {
   position: relative;
-  padding: 0.8em 0.8em 0.8em 2.8em;
+  padding: 0.8em 0.8em 0.8em 1em;
   margin-bottom: 0.6em;
   background: #f8f9fa;
   border-left: 3px solid #4a76a8;
   border-radius: 0 4px 4px 0;
   line-height: 1.7;
   font-size: 0.95em;
-  counter-increment: pub-counter;
-}
-
-.pub-list li::before {
-  content: "[" counter(pub-counter) "]";
-  position: absolute;
-  left: 0.6em;
-  top: 0.8em;
-  font-weight: 700;
-  font-size: 0.85em;
-  color: #4a76a8;
 }
 
 .pub-list .me {
@@ -198,6 +207,18 @@ strong, b {
 
 .pub-list li b {
   color: #2c3e50;
+}
+
+.pub-list .pub-title {
+  font-weight: 600;
+  margin-bottom: 0.3em;
+  line-height: 1.5;
+}
+
+.pub-list .pub-authors {
+  color: #555;
+  font-size: 0.9em;
+  line-height: 1.5;
 }
 
 /* Venue highlighting */
