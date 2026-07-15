@@ -7,7 +7,7 @@
 }
 
 #banner {
-  padding: 1.55em 0 1.05em 0;
+  padding: 1.35em 0 0.85em 0;
   align-items: center;
 }
 
@@ -15,7 +15,7 @@
   width: auto;
   flex-grow: 0;
   flex-shrink: 1;
-  max-width: calc(100% - 230px);
+  max-width: calc(100% - 210px);
 }
 
 #banner .content ul {
@@ -29,9 +29,9 @@
 /* --- Profile photo: placed on the LEFT in landscape, balanced in all modes --- */
 #banner .image {
   order: -1;
-  width: 200px;
-  height: 200px;
-  margin: 0 2.5em 0 0;
+  width: 185px;
+  height: 185px;
+  margin: 0 2.2em 0.15em 0;
   border-radius: 8px;
   overflow: hidden;
   flex-shrink: 0;
@@ -57,17 +57,17 @@
     flex-grow: 0;
   }
   #banner .image {
-    width: 180px;
-    height: 180px;
-    margin: 0 auto 1.2em auto;
+    width: 165px;
+    height: 165px;
+    margin: 0 auto 1.1em auto;
   }
 }
 
-@media screen and (max-width: 1280px) {
+@media screen and (max-width: 1280px) and (orientation: landscape) {
   #banner .image {
-    width: 170px;
-    height: 170px;
-    margin: 0 2em 0 0;
+    width: 160px;
+    height: 160px;
+    margin: 0 1.8em 0 0;
   }
 }
 
@@ -82,22 +82,27 @@
     max-width: 100%;
   }
   #banner .image {
-    width: 175px;
-    height: 175px;
-    margin: 0 auto 1em auto;
+    width: 160px;
+    height: 160px;
+    margin: 0 auto 0.9em auto;
     max-height: none;
   }
 }
 
 @media screen and (max-width: 480px) {
   #banner .image {
-    width: 155px;
-    height: 155px;
+    width: 145px;
+    height: 145px;
     max-height: none;
   }
   #main > .inner {
     padding: 0 1.2em 0.1em 1.2em;
   }
+}
+
+#biography p {
+  margin: 0;
+  line-height: 1.75;
 }
 
 #main > .inner > section {
@@ -203,6 +208,15 @@ strong, b {
   color: #2c3e50;
 }
 
+#sidebar #menu {
+  margin-bottom: 1.1em;
+  padding-bottom: 1.1em;
+}
+
+#sidebar #menu .major {
+  margin-bottom: 0.55em;
+}
+
 #sidebar #menu ul {
   color: #4a5568;
 }
@@ -210,6 +224,7 @@ strong, b {
 #sidebar #menu ul a,
 #sidebar #menu ul span {
   color: #4a5568;
+  padding: 0.28em 0;
 }
 
 #sidebar #menu ul a:hover,
@@ -219,6 +234,8 @@ strong, b {
 
 #sidebar #menu > ul > li {
   border-top-color: rgba(0, 0, 0, 0.06);
+  margin-top: 0.16em;
+  padding-top: 0.16em;
 }
 
 #sidebar #footer .copyright {
@@ -230,9 +247,65 @@ strong, b {
 }
 
 /* --- News list style --- */
+.news-list {
+  width: min(100%, 760px);
+  max-height: 15em;
+  overflow-y: auto;
+  padding: 0.3em 0.9em 0.3em 0;
+  margin: 0 0 0.55em 0;
+  list-style: none;
+  scrollbar-width: thin;
+  scrollbar-color: rgba(74, 118, 168, 0.45) rgba(0, 0, 0, 0.06);
+}
+
+.news-list::-webkit-scrollbar {
+  width: 6px;
+}
+
+.news-list::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.04);
+  border-radius: 999px;
+}
+
+.news-list::-webkit-scrollbar-thumb {
+  background: rgba(74, 118, 168, 0.45);
+  border-radius: 999px;
+}
+
 .news-list li {
-  padding: 0.4em 0;
-  line-height: 1.6;
+  display: flex;
+  align-items: baseline;
+  flex-wrap: wrap;
+  gap: 0.25em 0.45em;
+  padding: 0.36em 0;
+  line-height: 1.5;
+}
+
+.news-icon {
+  width: 1.35em;
+  flex: 0 0 1.35em;
+  text-align: center;
+}
+
+.news-year {
+  flex: 0 0 auto;
+  padding: 0.05em 0.45em;
+  border-radius: 999px;
+  background: rgba(74, 118, 168, 0.12);
+  color: #345580;
+  font-size: 0.82em;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+}
+
+.news-main {
+  color: #2c3e50;
+  font-weight: 700;
+}
+
+.news-topic {
+  color: #718096;
+  font-size: 0.92em;
 }
 
 /* --- Publications list style --- */
