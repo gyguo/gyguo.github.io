@@ -1,0 +1,19 @@
+# 知识卡导出索引文件
+schema_version: 1
+locale: zh-CN
+branch: main
+nodes_managed: true
+exported_at: "2026-09-22T11:55:33Z"
+modules:
+    "":
+        dir_name: 郭广宇个人学术主页（GitHub Pages 静态站点）
+        title: 郭广宇个人学术主页（GitHub Pages 静态站点）
+        scope:
+            - README.md
+            - .gitignore
+            - index.html
+            - publications.html
+        source_files: []
+        children: []
+        depends_on: []
+        related_to: []

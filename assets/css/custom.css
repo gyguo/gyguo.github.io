@@ -105,6 +105,15 @@
   line-height: 1.75;
 }
 
+#biography .recruitment {
+  margin-top: 0.85em;
+}
+
+#banner a[href^="mailto:"],
+#biography a[href^="mailto:"] {
+  overflow-wrap: anywhere;
+}
+
 #main > .inner > section {
   padding: 1.55em 0 0.8em 0;
 }
@@ -350,4 +359,41 @@ strong, b {
 .pub-list .venue {
   color: #4a76a8;
   font-weight: 700;
+}
+
+/* --- Highlighted publication (e.g. Nature Medicine) --- */
+.pub-list li.pub-highlight {
+  background: linear-gradient(90deg, #fff7e6, #f8f9fa);
+  border-left: 4px solid #d4a017;
+  box-shadow: 0 1px 6px rgba(212, 160, 23, 0.18);
+}
+
+.pub-list li.pub-highlight .pub-title {
+  font-size: 1.06em;
+  font-weight: 700;
+  color: #7a5a00;
+}
+
+.pub-list li.pub-highlight .pub-title b {
+  color: #b8860b;
+}
+
+/* --- Highlighted news item (fireworks / featured) --- */
+.news-list li.news-feature {
+  background: #f0f5fb;
+  border-left: 3px solid #4a76a8;
+  border-radius: 0 5px 5px 0;
+  padding: 0.55em 0.7em;
+  margin: 0.2em 0 0.45em;
+}
+
+.news-list li.news-feature .news-main {
+  font-weight: 800;
+  font-size: 1.12em;
+  color: #9b2c4b;
+}
+
+.news-list li.news-feature .news-topic {
+  color: #4a5568;
+  font-weight: 600;
 }
