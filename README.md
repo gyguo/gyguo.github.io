@@ -4,6 +4,6 @@
 
 
 ### Template
-The template is provide by [@ajlkn](https://twitter.com/) in https://html5up.net/editorial
+- The template is provide by [@ajlkn](https://twitter.com/) in https://html5up.net/editorial
 
 
