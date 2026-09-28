@@ -18,3 +18,9 @@ Desktop.ini
 
 # Linux
 *~
+
+# python
+__pycache__
+
+# Qoder
+.qoder/
